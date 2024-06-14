@@ -1,29 +1,30 @@
 
-import React from "react";
-function Scores({}) {
-    return (
-        <main className="scores-container">
-        <div class="scores">
-          <h1>Fake Course</h1>
+import React from 'react';
 
-          <table>
-            <thead>
-              <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>First name 1</td>
-                <td>Last name 1 </td>
-                <td>55</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </main>
-    )
+function Scores({ courseName, courseResults }) {
+  return (
+    <div className="scores">
+      <h1>{courseName}</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {courseResults.map((result, index) => (
+            <tr key={index}>
+              <td>{result.firstName}</td>
+              <td>{result.lastName}</td>
+              <td>{result.score}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
+
 export default Scores;
