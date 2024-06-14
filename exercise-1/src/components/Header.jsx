@@ -1,3 +1,5 @@
+import React from "react";
+import pnLogo from "../assets/pn-logo.png";
 function Header({ batchName }) {
     return (
         <header id="header">
